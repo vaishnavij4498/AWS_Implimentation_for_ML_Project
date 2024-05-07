@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--title>index.html</title-->
+  <title>BOOK RATING PREDICTOR</title>
+  <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+</head>
+
+<body>
+    <h1>
+    <centre>
+        -------------------------------------------- BOOK RATING PREDICTOR ! ----------------------------------------------
+    </centre>
+    </h1>
+    {% if result %}
+
+    <p>{{ result }}</p>
+
+    {% endif %}
+    <form method="post" action="/predict">
+        <!--label>Title</label><br>
+        <input type="text" name="title"><br><br>
+
+        <label>Authors</label><br>
+        <input type="text" name="authors"><br><br-->
+
+        <!--label>Average Rating</label><br>
+        <input type="text" name="average_rating"><br><br-->
+
+        <!--label>ISBN</label><br>
+        <input type="text" name="isbn"><br><br>
+
+        <label>ISBN13</label><br>
+        <input type="text" name="isbn13"><br><br-->
+
+        <!--label>Language_Code</label><br>
+        <input type="text" name="language_code"><br><br-->
+        <label>Num_Pages</label><br>
+        <input type="text" name="num_pages"><br><br>
+
+        <label>Text_Reviews_Count</label><br>
+        <input type="text" name="text_reviews_count"><br><br>
+
+        <label>PublicationYear</label><br>
+        <input type="datetime" name="publicationYear"><br><br>
+
+        <label>Language_Code_Grouped</label><br>
+        <input type="text" name="language_code_grouped"><br><br>
+        
+        <label>author_number_books</label><br>
+        <input type="text" name="author_number_books"><br><br>
+
+        <!--label>Ratings_Count</label><br>
+        <input type="text" name="ratings_count"><br><br-->
+
+        <!--label>Publication_Date</label><br>
+        <input type="text" name="publication_date"><br><br-->
+
+        <!--label>Publisher</label><br>
+        <input type="text" name="publisher"><br><br-->
+
+        <input type="submit" value="Predict"><br><br>
+    </form>
+
+
+<!--style type="text/css">
+    html, body, #container {
+      height: 100%;
+    }
+    body, #container {
+      overflow: hidden;
+      margin: 0;
+    }
+    #iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style-->
+  <!--div id="container">
+    <iframe id="iframe" sandbox="allow-scripts" src="/files/Downloads/ml-model-deployment-aws-ec2-main/ml-model-deployment-aws-ec2-main/templates/index.html"></iframe>
+  </div-->
+</body>
+
+</html>

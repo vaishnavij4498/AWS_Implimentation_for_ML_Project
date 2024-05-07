@@ -1,0 +1,89 @@
+{% extends 'template_base.html' %}
+
+{% block titre %} Predict page {% endblock %}
+
+{% block contenu %}
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Rating Prediction</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+        
+            .form-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100vh;
+                margin-top: 50px;
+            }
+        
+            form {
+                background-color: #fff;
+                padding: 60px;
+                border-radius: 8px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+                width: 700px;
+                max-width: 90%;
+            }
+        
+            form input[type="text"],
+            form input[type="number"],
+            form input[type="email"] {
+                width: calc(100% - 20px); /* Ajuster la largeur des inputs */
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+        
+            form button {
+                width: calc(40% - 5px);
+                padding: 15px;
+                border: none;
+                border-radius: 8px;
+                background-color: #041f3b;
+                color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                margin-top: 20px;
+            }
+        
+            form button:first-child {
+                margin-right: 0;
+            }
+        
+            form button:hover {
+                background-color: #041f3b;
+            }
+        
+            h2 {
+            font-size: 36px;
+            margin-top: 10px; /* Ajouter un espacement entre le formulaire et le titre */
+            }
+        </style>
+    </head>
+    <body>
+        
+    <div class="form-container">
+        
+        <form method="post" >
+            {% csrf_token %}
+            <h2> Predict book quality rating </h2>
+            <br></br>
+            {{ form.as_p }}
+            <button type="submit"> Predict </button>
+        </form>
+    </div>
+    </body>
+    </html>
+
+{% endblock %}

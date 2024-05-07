@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #041f3b; /* Couleur du titre */
+            margin-top: 20px; /* Espacement du haut */
+        }
+        .result-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin-top: 50px;
+        }
+        .result-box {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 700px;
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+        .result-box p {
+            margin: 10px 0;
+        }
+        .result-button {
+            width: calc(40% - 5px);
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #041f3b;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .result-button:hover {
+            background-color: #041f3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <div class="result-box">
+            <h1>Machine Learning model prediction of the book rating</h1>
+            <div class="result">
+                <p>Number of pages: {{ num_pages }}</p>
+                <p>Text reviews count: {{ text_reviews_count }}</p>
+                <p>Publication year: {{ publicationYear }}</p>
+                <p>Language code: {{ language_code_grouped }}</p>
+                <p>Author number of books: {{ author_number_books }}</p>
+                <p>Predicted book rating quality: {{ predicted_book_rating }}</p>
+            </div>
+        </div>
+        <!-- Ajoutez d'autres balises HTML ou du contenu pour afficher les résultats comme vous le souhaitez -->
+        <a href="{% url 'predict_ratings' %}">
+            <button type="button">Make another prediction</button>
+        </a>
+    </div>
+</body>
+</html>
